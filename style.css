@@ -1,55 +1,120 @@
+/* Google Font Import (CSS yolu ilə) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+    --background-color: #121826; /* Antrasit / Tünd Mavi */
+    --glass-color: rgba(43, 52, 79, 0.6); /* Şüşə Rəngi */
+    --text-color: #e2e8f0; /* Yumşaq Ağ */
+    --accent-color: #00f9b5; /* Firuzəyi / Nanə Yaşılı */
+    --border-color: rgba(129, 144, 175, 0.3);
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f4f7f9;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    overflow: hidden; /* Nəfəs alan fon üçün hazırlıq */
 }
 
 .container {
     width: 90%;
     max-width: 600px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: var(--glass-color);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px); /* Əsas Şüşə Effekti */
+    -webkit-backdrop-filter: blur(10px);
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 24px;
+    opacity: 0.8;
 }
 
 textarea {
     width: 100%;
     height: 100px;
     margin-top: 15px;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
     font-size: 16px;
     resize: vertical;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    box-sizing: border-box; /* Ölçü problemini aradan qaldırır */
+}
+
+textarea::placeholder {
+    color: rgba(226, 232, 240, 0.5);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 249, 181, 0.2);
 }
 
 button {
     margin-top: 15px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border-radius: 8px;
     font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 249, 181, 0.2);
+}
+
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 #responseContainer {
     margin-top: 20px;
     padding: 15px;
-    border-radius: 4px;
-    background-color: #f4f7f9;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
     text-align: left;
-    white-space: pre-wrap; /* Bu, mətnin sətirlərini qoruyur */
+    white-space: pre-wrap;
+    min-height: 50px;
+    transition: all 0.3s ease;
+}
+
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-left-color: var(--accent-color);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
