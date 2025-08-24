@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prisma MVP</title>
+    <title>Prisma - Fikir Kosmosu</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Prisma</h1>
-        <p>Qərar verməli olduğun problemi və ya ideyanı bura yaz:</p>
-        <textarea id="userInput" placeholder="Məsələn, yeni məhsulumuz üçün hansı qiymət strategiyasını seçməliyik?"></textarea>
-        <button id="submitBtn">Analiz Et</button>
-        <div class="loader" id="loader" style="display: none;"></div>
-        <div id="responseContainer">
+    <div class="background-canvas"></div>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <div class="logo-icon"></div> 
+            <span class="logo-text">Prisma</span>
+        </div>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="orbit-container">
+        <div class="orb visionary" data-persona="visionary">
             </div>
-    </div>
+        <div class="orb skeptic" data-persona="skeptic">
+            </div>
+        <div class="orb strategist" data-persona="strategist">
+            </div>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
